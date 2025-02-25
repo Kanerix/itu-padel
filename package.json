@@ -1,0 +1,24 @@
+{
+  "name": "itu-padel",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.app.json && tsc -p tsconfig.node.json"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "~4.0",
+    "tailwindcss": "~4.0"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "~5.0",
+    "@tsconfig/svelte": "~5.0",
+    "svelte": "~5.22",
+    "svelte-check": "~4.1",
+    "typescript": "~5.8",
+    "vite": "~6.2"
+  }
+}
