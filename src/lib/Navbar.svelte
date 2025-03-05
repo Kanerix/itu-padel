@@ -1,6 +1,7 @@
 <script lang="ts">
     import { faBars } from "@fortawesome/free-solid-svg-icons";
     import Fa from "svelte-fa";
+
     let open = false;
     let toggle = () => {
         open = !open;
