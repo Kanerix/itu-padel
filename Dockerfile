@@ -14,5 +14,4 @@ CMD [ "deno", "run", "build" ]
 
 
 FROM nginx:alpine
-COPY --from=build /usr/src/app/public /usr/share/nginx/html
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
