@@ -1,16 +1,18 @@
-FROM denoland/deno
+FROM denoland/deno AS build
 WORKDIR /usr/src/app
 
 COPY ./package.json .
+COPY ./deno.lock .
 
 RUN deno install
 
 COPY . .
 
-RUN deno run build
+RUN deno task build
 
-EXPOSE 5000
+CMD [ "deno", "run", "build" ]
 
-ENV HOST=0.0.0.0
 
-CMD [ "deno", "run", "preview" ]
+FROM nginx:alpine
+COPY --from=build /usr/src/app/public /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist /usr/share/nginx/html
