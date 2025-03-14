@@ -1,7 +1,7 @@
 FROM denoland/deno AS build
 WORKDIR /usr/src/app
 
-COPY ./package.json .
+COPY ./deno.json .
 COPY ./deno.lock .
 
 RUN deno install
